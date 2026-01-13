@@ -1,66 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Criar Conta</title>
-<link rel="stylesheet" href="css/style.css">
-<script src="js/auth.js"></script>
+    <meta charset="UTF-8">
+    <title>Criar Perfil | Guitarra Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/auth.js"></script>
+    <style>
+        body {
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%) !important;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .register-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .register-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 138, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* CORREÇÃO DEFINITIVA DO GRADIENTE */
+        .title-gradient {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .title-gradient span {
+            background: linear-gradient(to bottom, #ffffff, #ff8a00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            font-size: 2.2rem;
+            font-weight: 900;
+            display: inline-block;
+        }
+
+        .subtitle { color: #888; margin-bottom: 30px; font-size: 0.9rem; }
+        .input-group { margin-bottom: 15px; }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            background: #111 !important;
+            border: 1px solid #333 !important;
+            border-radius: 10px !important;
+            color: white !important;
+            outline: none;
+        }
+
+        .btn-register-submit {
+            width: 100%;
+            padding: 18px;
+            background: #ff8a00 !important;
+            color: black !important;
+            border: none !important;
+            border-radius: 10px !important;
+            font-weight: 900;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-back {
+            background: transparent;
+            color: #ff8a00;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <nav>
-    <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-        
-        <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.2rem;">
-            🎸 Guitarra Academy
-        </div>
-
-        <div class="nav-links" style="display: flex; gap: 15px; align-items: center;">
-            <a href="index.html" class="nav-link">Início</a>
-            
-            <div class="dropdown">
-                <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown()">Níveis ▼</a>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="niveis/iniciante.html">🟢 Iniciante</a>
-                    <a href="niveis/intermedio.html">🟡 Intermédio</a>
-                    <a href="niveis/avancado.html">🔴 Avançado</a>
-                </div>
+        <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 10px 20px;">
+            <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.4rem;">🎸 Guitarra Academy</div>
+            <div class="nav-links">
+                <a href="login.html" class="nav-link">Já tenho conta</a>
             </div>
+        </div>
+    </nav>
 
-            <a href="escolhervideo.html" class="nav-link">Videos</a>
-            <a href="area_aluno.html" class="nav-link">Área Aluno</a>
-            <div id="auth-button-container"></div>
+    <div class="register-wrapper">
+        <div class="register-card">
+            <h2 class="title-gradient"><span>Criar Perfil</span></h2>
+            <p class="subtitle">Junta-te à nossa comunidade</p>
+            <div class="input-group"><input id="r_name" placeholder="Nome Completo"></div>
+            <div class="input-group"><input id="r_email" placeholder="Email"></div>
+            <div class="input-group"><input id="r_senha" type="password" placeholder="Senha"></div>
+            <button class="btn-register-submit" onclick="register()">REGISTAR AGORA 🤘</button>
+            <button class="btn-back" onclick="window.location.href='login.html'">Voltar para o Login</button>
         </div>
     </div>
-</nav>
-
-<header>
-</header>
-
-<div class="container">
-  <h2>Criar utilizador</h2>
-  <input id="r_name" placeholder="Nome completo"><br><br>
-  <input id="r_email" placeholder="Email"><br><br>
-  <input id="r_senha" type="password" placeholder="Senha"><br><br>
-  <button onclick="register()">Registar</button>
-<button class="btn" onclick="window.location.href='login.html'">Já tenho conta</button>
-</div>
-<script>
-function toggleDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Fecha o menu se o utilizador clicar fora dele
-window.onclick = function(event) {
-  if (!event.target.matches('.nav-link')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 </body>
 </html>

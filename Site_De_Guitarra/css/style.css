@@ -106,3 +106,29 @@ nav {
     font-weight: 900;
     display: inline-block; /* Importante para o clip funcionar bem */
 }
+
+/* Card de conteúdo com efeito de profundidade */
+.content-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 138, 0, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.content-card:hover {
+    border-color: #ff8a00;
+    box-shadow: 0 0 20px rgba(255, 138, 0, 0.1);
+}
+
+/* Listas personalizadas para guitarristas */
+.guitar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.guitar-list li::before {
+    content: "🎸";
+    margin-right: 10px;
+}
