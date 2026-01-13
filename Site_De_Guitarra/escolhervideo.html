@@ -14,16 +14,28 @@
         }
 
         .hero-title {
-            font-size: 3rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            margin-top: 50px;
-            background: linear-gradient(to bottom, #fff 30%, #ff8a00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(255, 138, 0, 0.3));
-        }
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-top: 50px;
+    text-align: center;
+    
+    /* Correção da Linha Amarela */
+    background: linear-gradient(to bottom, #ffffff 20%, #ff8a00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    
+    /* Garante que o gradiente não "vaze" */
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    
+    filter: drop-shadow(0 0 15px rgba(255, 138, 0, 0.3));
+}
 
         /* PAINEL DE CONTROLO ESTILO ESTÚDIO */
         .glass-panel {

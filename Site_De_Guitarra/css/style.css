@@ -96,3 +96,13 @@ nav {
 .show {
     display: block !important;
 }
+
+.text-gradient {
+    background: linear-gradient(to bottom, #ffffff, #ff8a00);
+    -webkit-background-clip: text;
+    background-clip: text; /* Propriedade padrão */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+    font-weight: 900;
+    display: inline-block; /* Importante para o clip funcionar bem */
+}
