@@ -5,6 +5,12 @@
       "email": "alexeri0809@gmail.com",
       "password": "1234",
       "role": "student"
+    },
+    {
+      "name": "Professor Batata",
+      "email": "professor123@gmail.com",
+      "password": "1234",
+      "role": "teacher"
     }
   ]
 }
