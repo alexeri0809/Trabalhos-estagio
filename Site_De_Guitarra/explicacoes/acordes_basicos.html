@@ -1,173 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../css/style.css">
-<title>Acordes básicos</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Acordes Básicos - Guitarra Academy</title>
 </head>
 
 <body>
-  <nav>
-    <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-        
-        <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.2rem;">
-            🎸 Guitarra Academy
+    <nav>
+        <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 20px;">
+            <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.2rem;">
+                🎸 Guitarra Academy
+            </div>
+            <div class="nav-links" style="display: flex; gap: 15px; align-items: center;">
+                <a href="../index.html" class="nav-link">Início</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown()">Níveis ▼</a>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="../niveis/iniciante.html">🟢 Iniciante</a>
+                        <a href="../niveis/intermedio.html">🟡 Intermédio</a>
+                        <a href="../niveis/avancado.html">🔴 Avançado</a>
+                    </div>
+                </div>
+                <a href="../escolhervideo.html" class="nav-link">Videos</a>
+                <a href="../area_aluno.html" class="nav-link">Área Aluno</a>
+                <div id="auth-button-container"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 style="color: #ff8a00; text-align: center; margin-bottom: 10px;">Acordes Básicos</h1>
+        <p style="text-align: center; color: #ccc; margin-bottom: 40px;">Vamos preparar os dedos para tocar "Dunas" dos GNR.</p>
+
+        <div class="card" style="margin-bottom: 30px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px;">
+                <img src="../imagens/Tablatura_acordes.png" style="width: 100%; border-radius: 10px; border: 2px solid #333;">
+            </div>
+            <div style="flex: 2; min-width: 300px;">
+                <h3 style="color: #ff8a00; margin-top: 0;">1. Lendo a Tablatura de Acordes</h3>
+                <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                    <li>📏 <strong>Casas:</strong> Cada coluna de quadrados é uma casa da guitarra.</li>
+                    <li>🎸 <strong>Cordas:</strong> Cada linha horizontal é uma corda.</li>
+                    <li>✅ <strong>Círculos:</strong> Cordas que deves tocar.</li>
+                    <li>❌ <strong>X:</strong> Não toques nessa corda!</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="nav-links" style="display: flex; gap: 15px; align-items: center;">
-            <a href="index.html" class="nav-link">Início</a>
-            
-            <div class="dropdown">
-                <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown()">Níveis ▼</a>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="../niveis/iniciante.html">🟢 Iniciante</a>
-                    <a href="../niveis/intermedio.html">🟡 Intermédio</a>
-                    <a href="../niveis/avancado.html">🔴 Avançado</a>
+        <div class="card" style="margin-bottom: 30px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap-reverse;">
+            <div style="flex: 2; min-width: 300px;">
+                <h3 style="color: #ff8a00; margin-top: 0;">2. Posicionamento dos Dedos</h3>
+                <p>Na mão esquerda, cada dedo tem um número que verás nos diagramas:</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: #111; padding: 15px; border-radius: 10px;">
+                    <span>☝️ <strong>1:</strong> Indicador</span>
+                    <span>🖕 <strong>2:</strong> Médio</span>
+                    <span>💍 <strong>3:</strong> Anelar</span>
+                    <span>👶 <strong>4:</strong> Mindinho</span>
                 </div>
+                <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">💡 O polegar fica atrás do braço para apoio.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <img src="../imagens/dedosguitarra.png" style="width: 100%; border-radius: 10px; filter: grayscale(0.5);">
+            </div>
+        </div>
+
+        <h2 style="text-align: center; margin: 50px 0 30px;">Dicionário de Acordes (Mão Esquerda)</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            
+            <div class="card" style="border-top: 4px solid #ff8a00;">
+                <h3 style="text-align: center;">Sol (G)</h3>
+                <p>🔹 Dedo 1: Casa 2, Corda 5</p>
+                <p>🔹 Dedo 2: Casa 3, Corda 6</p>
+                <p>🔹 Dedo 3: Casa 3, Corda 1</p>
+                <audio controls style="width: 100%; margin-top: 15px;">
+                    <source src="../audios/acordeG.mp3" type="audio/mpeg">
+                </audio>
             </div>
 
-            <a href="../videos/escolhervideo.html" class="nav-link">Videos</a>
-            <a href="area_aluno.html" class="nav-link">Área Aluno</a>
-            <div id="auth-button-container"></div>
+            <div class="card" style="border-top: 4px solid #ff8a00;">
+                <h3 style="text-align: center;">Mi Menor (Em)</h3>
+                <p>🔹 Dedo 1: Casa 2, Corda 5</p>
+                <p>🔹 Dedo 2: Casa 2, Corda 4</p>
+                <audio controls style="width: 100%; margin-top: 15px;">
+                    <source src="../audios/acordeEm.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="card" style="border-top: 4px solid #ff8a00;">
+                <h3 style="text-align: center;">Dó (C)</h3>
+                <p>🔹 Dedo 1: Casa 1, Corda 2</p>
+                <p>🔹 Dedo 2: Casa 2, Corda 4</p>
+                <p>🔹 Dedo 3: Casa 3, Corda 5</p>
+                <p style="color: #ff4747; font-size: 0.8rem;">⚠️ Abafar a 6ª corda</p>
+                <audio controls style="width: 100%; margin-top: 15px;">
+                    <source src="../audios/acordeC.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="card" style="border-top: 4px solid #ff8a00;">
+                <h3 style="text-align: center;">Ré (D)</h3>
+                <p>🔹 Dedo 1: Casa 2, Corda 3</p>
+                <p>🔹 Dedo 2: Casa 2, Corda 1</p>
+                <p>🔹 Dedo 3: Casa 3, Corda 2</p>
+                <p style="color: #ff4747; font-size: 0.8rem;">⚠️ Não tocar 5ª e 6ª cordas</p>
+                <audio controls style="width: 100%; margin-top: 15px;">
+                    <source src="../audios/acordeD.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; padding: 40px; background: rgba(255,138,0,0.1); border-radius: 20px; text-align: center; border: 1px dashed #ff8a00;">
+            <h3>Próximo Passo: O Ritmo!</h3>
+            <p>Já consegues mudar entre estes acordes sem parar? Se sim, estás pronto.</p>
+            <a href="ritmos.html" class="btn" style="text-decoration: none; display: inline-block; margin-top: 20px; padding: 15px 40px;">
+                Ir para Aula de Ritmos →
+            </a>
         </div>
     </div>
-</nav>
 
-<h2>Acordes básicos</h2>
-
-<p> Aqui vamos começar por aprender a tocar os acordes da musica "Dunas" dos GNR 
-  <div> Ela usa apenas 4 acordes sendo eles: Sol, Mí Maior, Dó e Ré<div>
-</p>
-
-<p> Antes de algo, vamos aprender a ler a "<u><strong>tablatura com acordes</strong></u>" 
-  deixo em negrito e sublinhado porque iremos aprender "<u><strong>tablaturas de dedilhado<strong></u>"
-</p>
-
-<div style="margin-bottom: 20px; display: flex; align-items: center;">
-    <img src="../imagens/Tablatura_acordes.png" width="200" style="margin-right: 15px;">
-
-    <div style="display: inline-block; vertical-align: middle;">
-        <span style="display: block;">Vamos começar pelas casas, cada linha de quadrados (seta) é equivalente a 1 casa.</span>
-        <span style="display: block;">Cada linha na horizontal é equivalente a uma corda.</span>
-        <span style="display: block;">As linhas são contadas de cima para baixo e da direita para a esquerda</span>
-        <span style="display: block;">Os circulos que estão na parte de cima são as cordas que temos de tocar,
-           <div>se tiver os circulos todos, tocamos, caso tenha um X, não se toca a corda.</div></span>
-    </div>
-</div>
-
-<p> Agora vamos passar para o posicionamento dos dedos!</p> 
-
-<div style="margin-bottom: 20px; display: flex; align-items: center;">
-    <img src="../imagens/dedosguitarra.png" width="200" style="margin-right: 15px;">
-
-    <div style="display: inline-block; vertical-align: middle;">
-        <span style="display: block;">Para começar, temos de entender as mãos.</span> 
-        <span style="display: block;">A mão esquerda fica no braço para mudar as cordas que vamos apertar.</span>
-        <span style="display: block;">A mão direita fica no corpo para tocar as cordas.</span>
-        <span style="display: block;">Os dedos da mão esquerda são: 
-          <div style="margin-left: 40px;">Indicador = dedo 1</div>
-          <div style="margin-left: 40px;">Médio = dedo 2</div>
-          <div style="margin-left: 40px;">Anelar = dedo 3</div>
-          <div style="margin-left: 40px;">Mindinho = dedo 4</div> </span>
-        <span style="display: block;">(OBS: O polegar da mão esquerda so é utilizado para abafar as cordas e deve sempre ser movimentado juntamente com a mão)</span>
-    </div>
-</div>
-
-<p> Agora que ja aprendeste o posicionamento dos dedos, vamos começar! </p>
-
-<p><strong>Vamos fazer a seguinte sequencia para baixo com o polegar da mão direita: G, Em, C e o D</strong></p>
-
-<div style="margin-bottom: 20px;">
-    <img src="../imagens/sifradunas.png" width="400">
-</div>
-
-<p><strong>Agora com a mão esquerda metemos:</strong></p>
-
-<div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
-    
-    <div style="width: 250px;">
-        <div><strong>Para o acorde de G</strong></div>
-        <div style="margin-left: 20px;">Dedo 1 na Casa 2 Corda 6</div>
-        <div style="margin-left: 20px;">Dedo 2 na Casa 3 Corda 5</div>
-        <div style="margin-left: 20px;">Dedo 3 na Casa 3 Corda 1</div>
-        <audio controls style="width: 100%; margin-top: 10px;">
-            <source src="../audios/acordeG.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-
-    <div style="width: 250px;">
-        <div><strong>Para o acorde de Em</strong></div>
-        <div style="margin-left: 20px;">Dedo 1 na Casa 2 Corda 5</div>
-        <div style="margin-left: 20px;">Dedo 2 na Casa 2 Corda 4</div>
-        <audio controls style="width: 100%; margin-top: 10px;">
-            <source src="../audios/acordeEm.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-
-    <div style="width: 250px;">
-        <div><strong>Para o acorde de C</strong></div>
-        <div style="margin-left: 20px;">Dedo 1 na Casa 1 Corda 2</div>
-        <div style="margin-left: 20px;">Dedo 2 na Casa 2 Corda 4</div>
-        <div style="margin-left: 20px;">Dedo 3 na Casa 3 Corda 5</div>
-        <div style="font-size: 0.8em; color: gray;">(OBS: Não se toca a 6ª corda)</div>
-        <audio controls style="width: 100%; margin-top: 10px;">
-            <source src="../audios/acordeC.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-
-    <div style="width: 230px;">
-        <div><strong>Para o acorde de D</strong></div>
-        <div style="margin-left: 20px;">Dedo 1 na Casa 2 Corda 3</div>
-        <div style="margin-left: 20px;">Dedo 2 na Casa 2 Corda 1</div>
-        <div style="margin-left: 20px;">Dedo 3 na Casa 3 Corda 2</div>
-        <div style="font-size: 0.9em; color: gray;">(OBS: Não se toca a 5ª e 6ª)</div>
-        <audio controls style="width: 100%; margin-top: 10px;">
-            <source src="../audios/acordeD.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-
-</div>
-
-<p> Se ja te sentes capaz de fazer estes acordes, vamos passar para os ritmos e depois disso, vamos aprender a tocar a nossa primeira musica!</p>
-
-<div style="margin-top: 50px; text-align: center; width: 100%;">
-    
-    <a href="ritmos.html" style="
-        background-color: #4CAF50; 
-        color: white; 
-        padding: 15px 32px; 
-        text-align: center; 
-        text-decoration: none; 
-        display: inline-block; 
-        font-size: 16px; 
-        margin: 4px 2px; 
-        cursor: pointer; 
-        border-radius: 8px;
-        font-weight: bold;
-        border: none;
-    ">
-        Ir para a Aula de Ritmos
-    </a>
-
-</div>
-</div>
-<script>
-function toggleDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Fecha o menu se o utilizador clicar fora dele
-window.onclick = function(event) {
-  if (!event.target.matches('.nav-link')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
+    <script>
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+          if (!event.target.matches('.nav-link')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+    </script>
 </body>
 </html>

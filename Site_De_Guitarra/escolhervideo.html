@@ -1,60 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="css/style.css">
-<title>Reprodutor de Notas e Tipos</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Master Chord Player | Guitarra Academy</title>
 
-<style>
-body {
-    font-family: Arial;
-    background: linear-gradient(120deg, #1f1f1f, #3b3b3b);
-    color: white;
-    text-align: center;
-}
+    <style>
+        /* DESIGN EXPLOSIVO */
+        body {
+            background: radial-gradient(circle at top, #2c2c2c 0%, #000000 100%) !important;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-.container {
-    margin-top: 40px;
-}
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-top: 50px;
+            background: linear-gradient(to bottom, #fff 30%, #ff8a00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(255, 138, 0, 0.3));
+        }
 
-select, button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: none;
-    margin: 8px;
-    cursor: pointer;
-}
+        /* PAINEL DE CONTROLO ESTILO ESTÚDIO */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 850px;
+            margin: 40px auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
 
-button {
-    background: #ff4747;
-    color: white;
-}
+        .control-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
 
-button:hover {
-    background: #ff6a6a;
-}
+        .select-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
 
-video {
-    margin-top: 25px;
-    width: 70%;
-    border-radius: 14px;
-    outline: 3px solid white;
-}
-</style>
+        label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #ff8a00;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-left: 5px;
+        }
 
+        select {
+            background: #111 !important;
+            color: white !important;
+            border: 2px solid #333 !important;
+            padding: 15px 25px !important;
+            border-radius: 15px !important;
+            font-weight: bold;
+            transition: 0.3s;
+            min-width: 200px;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        select:focus {
+            border-color: #ff8a00 !important;
+            box-shadow: 0 0 20px rgba(255, 138, 0, 0.2);
+        }
+
+        /* BOTÃO PLAY TURBO */
+        .btn-play {
+            background: linear-gradient(135deg, #ff8a00, #e67e22) !important;
+            color: black !important;
+            font-size: 1.2rem !important;
+            padding: 20px 50px !important;
+            border-radius: 50px !important;
+            border: none !important;
+            font-weight: 900 !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+            box-shadow: 0 10px 30px rgba(255, 138, 0, 0.4) !important;
+        }
+
+        .btn-play:hover {
+            transform: scale(1.05) translateY(-5px) !important;
+            box-shadow: 0 15px 40px rgba(255, 138, 0, 0.6) !important;
+        }
+
+        /* VIDEO PLAYER PRO */
+        .video-container {
+            position: relative;
+            margin-top: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: #000;
+            display: none;
+            box-shadow: 0 0 100px rgba(255, 138, 0, 0.1);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        .status-light {
+            width: 10px;
+            height: 10px;
+            background: #ff8a00;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 0 10px #ff8a00;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-    <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-        
-        <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.2rem;">
-            🎸 Guitarra Academy
-        </div>
 
-        <div class="nav-links" style="display: flex; gap: 15px; align-items: center;">
+<nav>
+    <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 20px;">
+        <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.4rem;">🎸 Guitarra Academy</div>
+        <div class="nav-links" style="display: flex; gap: 20px; align-items: center;">
             <a href="index.html" class="nav-link">Início</a>
-            
             <div class="dropdown">
                 <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown()">Níveis ▼</a>
                 <div id="myDropdown" class="dropdown-content">
@@ -63,53 +149,59 @@ video {
                     <a href="niveis/avancado.html">🔴 Avançado</a>
                 </div>
             </div>
-
-            <a href="escolhervideo.html" class="nav-link">Videos</a>
+            <a href="escolhervideo.html" class="nav-link" style="color: #ff8a00;">Videos</a>
             <a href="area_aluno.html" class="nav-link">Área Aluno</a>
             <div id="auth-button-container"></div>
         </div>
     </div>
 </nav>
 
-<h1>🎸 Reprodutor de Acordes por Nota</h1>
+<h1 class="hero-title">Chord Player <span style="font-weight: 200;">Pro</span></h1>
 
 <div class="container">
+    <div class="glass-panel">
+        <div style="margin-bottom: 30px;">
+            <span class="status-light"></span> 
+            <span style="font-size: 0.8rem; color: #888; text-transform: uppercase;">Estúdio de Visualização Ativo</span>
+        </div>
 
-    <!-- PRIMEIRA ESCOLHA: NOTA -->
-    <p>Escolhe a nota musical:</p>
+        <div class="control-group">
+            <div class="select-wrapper">
+                <label>Nota Fundamental</label>
+                <select id="notaSelect" onchange="mostrarTipos()">
+                    <option value="">-- SELECIONAR --</option>
+                    <option value="do">Dó (C)</option>
+                    <option value="re">Ré (D)</option>
+                    <option value="mi">Mi (E)</option>
+                    <option value="fa">Fá (F)</option>
+                    <option value="sol">Sol (G)</option>
+                    <option value="la">Lá (A)</option>
+                    <option value="si">Si (B)</option>
+                </select>
+            </div>
 
-    <select id="notaSelect" onchange="mostrarTipos()">
-        <option value="">-- Selecionar Nota --</option>
-        <option value="do">Dó</option>
-        <option value="re">Ré</option>
-        <option value="mi">Mi</option>
-        <option value="fa">Fá</option>
-        <option value="sol">Sol</option>
-        <option value="la">Lá</option>
-        <option value="si">Si</option>
-    </select>
+            <div class="select-wrapper" id="tipoBox" style="opacity: 0.3; pointer-events: none; transition: 0.5s;">
+                <label>Variação / Tipo</label>
+                <select id="tipoSelect">
+                    </select>
+            </div>
+        </div>
 
-    <!-- SEGUNDA ESCOLHA: TIPO (só aparece depois da nota) -->
-    <div id="tipoBox" style="display:none;">
-        <p>Escolhe o tipo:</p>
+        <button class="btn-play" onclick="carregarVideo()">🔥 Reproduzir Aula</button>
 
-        <select id="tipoSelect">
-            <!-- preenchido dinamicamente -->
-        </select>
+        <div id="videoWrapper" class="video-container">
+            <video id="player" controls>
+                <source id="videoSource" src="" type="video/mp4">
+            </video>
+        </div>
     </div>
 
-    <br>
-
-    <button onclick="carregarVideo()">Reproduzir</button>
-
-    <video id="player" controls style="display:none;">
-        <source id="videoSource" src="" type="video/mp4">
-    </video>
-
+    <div style="margin-top: 30px;">
+        <a href="area_aluno.html" class="back-button" style="text-decoration: none;">← Voltar ao Dashboard</a>
+    </div>
 </div>
 
 <script>
-// tipos possíveis por nota
 const tiposPorNota = {
     do: ["maior", "menor", "7", "sus4"],
     re: ["maior", "menor", "7"],
@@ -120,27 +212,26 @@ const tiposPorNota = {
     si: ["maior", "menor"]
 };
 
-// mostra segundo dropdown
 function mostrarTipos() {
     const nota = document.getElementById("notaSelect").value;
     const tipoBox = document.getElementById("tipoBox");
     const tipoSelect = document.getElementById("tipoSelect");
 
     if (!nota) {
-        tipoBox.style.display = "none";
+        tipoBox.style.opacity = "0.3";
+        tipoBox.style.pointerEvents = "none";
         return;
     }
 
-    tipoBox.style.display = "block";
-
-    // limpar opções anteriores
+    // Ativar com animação
+    tipoBox.style.opacity = "1";
+    tipoBox.style.pointerEvents = "auto";
     tipoSelect.innerHTML = "";
 
-    // criar novas opções
     tiposPorNota[nota].forEach(tipo => {
         const op = document.createElement("option");
         op.value = tipo;
-        op.textContent = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+        op.textContent = tipo.toUpperCase();
         tipoSelect.appendChild(op);
     });
 }
@@ -148,39 +239,49 @@ function mostrarTipos() {
 function carregarVideo() {
     const nota = document.getElementById("notaSelect").value;
     const tipo = document.getElementById("tipoSelect").value;
+    const videoWrapper = document.getElementById("videoWrapper");
     const video = document.getElementById("player");
     const source = document.getElementById("videoSource");
 
     if (!nota || !tipo) {
-        alert("Escolhe a nota e o tipo!");
+        alert("🚨 Seleciona a nota e o tipo para carregar o vídeo!");
         return;
     }
 
-    // videos/do-maior.mp4, videos/do-menor.mp4 etc.
     source.src = "videos/" + nota + "-" + tipo + ".mp4";
-
-    video.style.display = "block";
+    
+    // Animação de entrada do vídeo
+    videoWrapper.style.display = "block";
+    videoWrapper.style.animation = "fadeInUp 0.8s ease forwards";
+    
     video.load();
     video.play();
 }
-</script>
-<script>
+
 function toggleDropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Fecha o menu se o utilizador clicar fora dele
+// Fechar ao clicar fora
 window.onclick = function(event) {
-  if (!event.target.matches('.nav-link')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+    if (!event.target.matches('.nav-link')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
     }
-  }
 }
 </script>
+
+<style>
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 </body>
 </html>

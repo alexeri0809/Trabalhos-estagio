@@ -1,65 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="css/style.css">
-<title>Guitarra Academy</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Guitarra Academy - O Teu Palco Começa Aqui</title>
 </head>
 
 <body>
-  <nav>
-    <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-        
-        <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.2rem;">
-            🎸 Guitarra Academy
-        </div>
-
-        <div class="nav-links" style="display: flex; gap: 15px; align-items: center;">
-            <a href="index.html" class="nav-link">Início</a>
-            
-            <div class="dropdown">
-                <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown()">Níveis ▼</a>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="niveis/iniciante.html">🟢 Iniciante</a>
-                    <a href="niveis/intermedio.html">🟡 Intermédio</a>
-                    <a href="niveis/avancado.html">🔴 Avançado</a>
-                </div>
+    <nav>
+        <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 20px;">
+            <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.4rem; letter-spacing: 1px;">
+                🎸 GUITARRA ACADEMY
             </div>
 
-            <a href="escolhervideo.html" class="nav-link">Videos</a>
-            <a href="area_aluno.html" class="nav-link">Área Aluno</a>
-            <div id="auth-button-container"></div>
+            <div class="nav-links" style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" class="nav-link">Início</a>
+                
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown()">Níveis ▼</a>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="niveis/iniciante.html">🟢 Iniciante</a>
+                        <a href="niveis/intermedio.html">🟡 Intermédio</a>
+                        <a href="niveis/avancado.html">🔴 Avançado</a>
+                    </div>
+                </div>
+
+                <a href="escolhervideo.html" class="nav-link">Vídeos</a>
+                <a href="area_aluno.html" class="nav-link">Área Aluno</a>
+                <div id="auth-button-container"></div>
+            </div>
         </div>
+    </nav>
+
+    <div class="container" style="text-align: center; padding: 100px 20px;">
+        
+        <div style="margin-bottom: 20px;">
+            <span style="background: rgba(255, 138, 0, 0.2); color: #ff8a00; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; border: 1px solid #ff8a00;">
+                DOMINA O TEU INSTRUMENTO
+            </span>
+        </div>
+
+        <h1 style="font-size: 3.5rem; margin: 0; line-height: 1.1; background: linear-gradient(to right, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Aprende guitarra do <br> <span style="color: #ff8a00; -webkit-text-fill-color: #ff8a00;">zero ao avançado</span>
+        </h1>
+
+        <p style="font-size: 1.2rem; color: #ccc; max-width: 600px; margin: 25px auto 40px auto; line-height: 1.6;">
+            Aulas passo a passo, ritmos, acordes e as tuas músicas favoritas. Estás pronto para tocar como um profissional?
+        </p>
+
+        <a href="area_aluno.html" class="btn" style="text-decoration: none; padding: 18px 40px; font-size: 1.1rem; display: inline-block;">
+            Começar Agora →
+        </a>
+
+        <div style="display: flex; justify-content: center; gap: 40px; margin-top: 80px; border-top: 1px solid #333; padding-top: 40px;">
+            <div style="text-align: center;">
+                <h4 style="margin: 0; color: #ff8a00;">+20</h4>
+                <p style="font-size: 0.8rem; color: #888; margin: 5px 0 0 0;">Vídeos</p>
+            </div>
+            <div style="text-align: center;">
+                <h4 style="margin: 0; color: #ff8a00;">3</h4>
+                <p style="font-size: 0.8rem; color: #888; margin: 5px 0 0 0;">Níveis</p>
+            </div>
+            <div style="text-align: center;">
+                <h4 style="margin: 0; color: #ff8a00;">100%</h4>
+                <p style="font-size: 0.8rem; color: #888; margin: 5px 0 0 0;">Prático</p>
+            </div>
+        </div>
+
     </div>
-</nav>
 
-<header>
-</header>
+    <script>
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-<div class="container">
-
-<h1>Aprende guitarra do zero ao avançado</h1>
-
-<a href="area_aluno.html">Entrar nos cursos</a>
-
-</div>
-<script>
-function toggleDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Fecha o menu se o utilizador clicar fora dele
-window.onclick = function(event) {
-  if (!event.target.matches('.nav-link')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
+        window.onclick = function(event) {
+            if (!event.target.matches('.nav-link')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
