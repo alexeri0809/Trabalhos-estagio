@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style.css">
+<title>Reprodutor de Notas e Tipos</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(120deg, #1f1f1f, #3b3b3b);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+select, button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    margin: 8px;
+    cursor: pointer;
+}
+
+button {
+    background: #ff4747;
+    color: white;
+}
+
+button:hover {
+    background: #ff6a6a;
+}
+
+video {
+    margin-top: 25px;
+    width: 70%;
+    border-radius: 14px;
+    outline: 3px solid white;
+}
+</style>
+
+</head>
+<body>
+    <nav>
+    <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        
+        <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.2rem;">
+            🎸 Guitarra Academy
+        </div>
+
+        <div class="nav-links" style="display: flex; gap: 15px; align-items: center;">
+            <a href="../index.html" class="nav-link">Início</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown()">Níveis ▼</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="../niveis/iniciante.html">🟢 Iniciante</a>
+                    <a href="../niveis/intermedio.html">🟡 Intermédio</a>
+                    <a href="../niveis/avancado.html">🔴 Avançado</a>
+                </div>
+            </div>
+
+            <a href="escolhervideo.html" class="nav-link">Videos</a>
+            <a href="../area_aluno.html" class="nav-link">Área Aluno</a>
+            <div id="auth-button-container"></div>
+        </div>
+    </div>
+</nav>
+
+<h1>🎸 Reprodutor de Acordes por Nota</h1>
+
+<div class="container">
+
+    <!-- PRIMEIRA ESCOLHA: NOTA -->
+    <p>Escolhe a nota musical:</p>
+
+    <select id="notaSelect" onchange="mostrarTipos()">
+        <option value="">-- Selecionar Nota --</option>
+        <option value="do">Dó</option>
+        <option value="re">Ré</option>
+        <option value="mi">Mi</option>
+        <option value="fa">Fá</option>
+        <option value="sol">Sol</option>
+        <option value="la">Lá</option>
+        <option value="si">Si</option>
+    </select>
+
+    <!-- SEGUNDA ESCOLHA: TIPO (só aparece depois da nota) -->
+    <div id="tipoBox" style="display:none;">
+        <p>Escolhe o tipo:</p>
+
+        <select id="tipoSelect">
+            <!-- preenchido dinamicamente -->
+        </select>
+    </div>
+
+    <br>
+
+    <button onclick="carregarVideo()">Reproduzir</button>
+
+    <video id="player" controls style="display:none;">
+        <source id="videoSource" src="" type="video/mp4">
+    </video>
+
+</div>
+
+<script>
+// tipos possíveis por nota
+const tiposPorNota = {
+    do: ["maior", "menor", "7", "sus4"],
+    re: ["maior", "menor", "7"],
+    mi: ["maior", "menor"],
+    fa: ["maior", "menor"],
+    sol: ["maior", "menor", "7"],
+    la: ["maior", "menor", "7"],
+    si: ["maior", "menor"]
+};
+
+// mostra segundo dropdown
+function mostrarTipos() {
+    const nota = document.getElementById("notaSelect").value;
+    const tipoBox = document.getElementById("tipoBox");
+    const tipoSelect = document.getElementById("tipoSelect");
+
+    if (!nota) {
+        tipoBox.style.display = "none";
+        return;
+    }
+
+    tipoBox.style.display = "block";
+
+    // limpar opções anteriores
+    tipoSelect.innerHTML = "";
+
+    // criar novas opções
+    tiposPorNota[nota].forEach(tipo => {
+        const op = document.createElement("option");
+        op.value = tipo;
+        op.textContent = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+        tipoSelect.appendChild(op);
+    });
+}
+
+function carregarVideo() {
+    const nota = document.getElementById("notaSelect").value;
+    const tipo = document.getElementById("tipoSelect").value;
+    const video = document.getElementById("player");
+    const source = document.getElementById("videoSource");
+
+    if (!nota || !tipo) {
+        alert("Escolhe a nota e o tipo!");
+        return;
+    }
+
+    // videos/do-maior.mp4, videos/do-menor.mp4 etc.
+    source.src = "videos/" + nota + "-" + tipo + ".mp4";
+
+    video.style.display = "block";
+    video.load();
+    video.play();
+}
+</script>
+<script>
+function toggleDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Fecha o menu se o utilizador clicar fora dele
+window.onclick = function(event) {
+  if (!event.target.matches('.nav-link')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style.css">
+<title>Iniciante</title>
+</head>
+
+<body>
+    <nav>
+    <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        
+        <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.2rem;">
+            🎸 Guitarra Academy
+        </div>
+
+        <div class="nav-links" style="display: flex; gap: 15px; align-items: center;">
+            <a href="../index.html" class="nav-link">Início</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown()">Níveis ▼</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="iniciante.html">🟢 Iniciante</a>
+                    <a href="intermedio.html">🟡 Intermédio</a>
+                    <a href="avancado.html">🔴 Avançado</a>
+                </div>
+            </div>
+
+            <a href="../videos/escolhervideo.html" class="nav-link">Videos</a>
+            <a href="../area_aluno.html" class="nav-link">Área Aluno</a>
+            <div id="auth-button-container"></div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+<h2>Nível Iniciante</h2>
+
+<div class="card">
+<a href="../explicacoes/acordes_basicos.html">Acordes Básicos</a>
+</div>
+
+<div class="card">
+<a href="../explicacoes/ritmos.html">Ritmos</a>
+</div>
+
+<div class="card">
+<a href="../explicacoes/primeira_musica_Dunas.html">Primeira musica</a>
+</div>
+
+</div>
+<script>
+function toggleDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Fecha o menu se o utilizador clicar fora dele
+window.onclick = function(event) {
+  if (!event.target.matches('.nav-link')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>

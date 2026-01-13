@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Ritmos Basicos</title>
+</head>
+<body>
+    <nav>
+    <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        
+        <div class="logo" style="font-weight: bold; color: #ff8a00; font-size: 1.2rem;">
+            🎸 Guitarra Academy
+        </div>
+
+        <div class="nav-links" style="display: flex; gap: 15px; align-items: center;">
+            <a href="../index.html" class="nav-link">Início</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown()">Níveis ▼</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="../niveis/iniciante.html">🟢 Iniciante</a>
+                    <a href="../niveis/intermedio.html">🟡 Intermédio</a>
+                    <a href="../niveis/avancado.html">🔴 Avançado</a>
+                </div>
+            </div>
+
+            <a href="../videos/escolhervideo.html" class="nav-link">Videos</a>
+            <a href="../area_aluno.html" class="nav-link">Área Aluno</a>
+            <div id="auth-button-container"></div>
+        </div>
+    </div>
+</nav>
+
+<h2>Acordes básicos</h2>
+
+<p> Aqui vamos começar por aprender a tocar os acordes da musica "Dunas" dos GNR 
+  <div> Ela usa apenas 4 acordes sendo eles: Sol, Mí Maior, Dó e Ré<div>
+</p>
+
+<p> Antes de algo, vamos aprender a ler a "<u><strong>tablatura com acordes</strong></u>" 
+  deixo em negrito e sublinhado porque iremos aprender "<u><strong>tablaturas de dedilhado<strong></u>"
+</p>
+
+<div style="margin-bottom: 20px; display: flex; align-items: center;">
+    <img src="../imagens/Tablatura_acordes.png" width="200" style="margin-right: 15px;">
+
+    <div style="display: inline-block; vertical-align: middle;">
+        <span style="display: block;">Vamos começar pelas casas, cada linha de quadrados (seta) é equivalente a 1 casa.</span>
+        <span style="display: block;">Cada linha na horizontal é equivalente a uma corda.</span>
+        <span style="display: block;">As linhas são contadas de cima para baixo e da direita para a esquerda</span>
+        <span style="display: block;">Os circulos que estão na parte de cima são as cordas que temos de tocar,
+           <div>se tiver os circulos todos, tocamos, caso tenha um X, não se toca a corda.</div></span>
+    </div>
+</div>
+
+<p> Agora vamos passar para o posicionamento dos dedos!</p> 
+
+<div style="margin-bottom: 20px; display: flex; align-items: center;">
+    <img src="../imagens/dedosguitarra.png" width="200" style="margin-right: 15px;">
+
+    <div style="display: inline-block; vertical-align: middle;">
+        <span style="display: block;">Para começar, temos de entender as mãos.</span> 
+        <span style="display: block;">A mão esquerda fica no braço para mudar as cordas que vamos apertar.</span>
+        <span style="display: block;">A mão direita fica no corpo para tocar as cordas.</span>
+        <span style="display: block;">Os dedos da mão esquerda são: 
+          <div style="margin-left: 40px;">Indicador = dedo 1</div>
+          <div style="margin-left: 40px;">Médio = dedo 2</div>
+          <div style="margin-left: 40px;">Anelar = dedo 3</div>
+          <div style="margin-left: 40px;">Mindinho = dedo 4</div> </span>
+        <span style="display: block;">(OBS: O polegar da mão esquerda so é utilizado para abafar as cordas e deve sempre ser movimentado juntamente com a mão)</span>
+    </div>
+</div>
+
+<p> Agora que ja aprendeste o posicionamento dos dedos, vamos começar! </p>
+
+<p><strong>Vamos fazer a seguinte sequencia para baixo com o polegar da mão direita: G, Em, C e o D</strong></p>
+
+<div style="margin-bottom: 20px;">
+    <img src="../imagens/sifradunas.png" width="400">
+</div>
+
+<p><strong>Agora com a mão esquerda metemos:</strong></p>
+
+<div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+    
+    <div style="width: 250px;">
+        <div><strong>Para o acorde de G</strong></div>
+        <div style="margin-left: 20px;">Dedo 1 na Casa 2 Corda 6</div>
+        <div style="margin-left: 20px;">Dedo 2 na Casa 3 Corda 5</div>
+        <div style="margin-left: 20px;">Dedo 3 na Casa 3 Corda 1</div>
+        <audio controls style="width: 100%; margin-top: 10px;">
+            <source src="../audios/acordeG.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div style="width: 250px;">
+        <div><strong>Para o acorde de Em</strong></div>
+        <div style="margin-left: 20px;">Dedo 1 na Casa 2 Corda 5</div>
+        <div style="margin-left: 20px;">Dedo 2 na Casa 2 Corda 4</div>
+        <audio controls style="width: 100%; margin-top: 10px;">
+            <source src="../audios/acordeEm.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div style="width: 250px;">
+        <div><strong>Para o acorde de C</strong></div>
+        <div style="margin-left: 20px;">Dedo 1 na Casa 1 Corda 2</div>
+        <div style="margin-left: 20px;">Dedo 2 na Casa 2 Corda 4</div>
+        <div style="margin-left: 20px;">Dedo 3 na Casa 3 Corda 5</div>
+        <div style="font-size: 0.8em; color: gray;">(OBS: Não se toca a 6ª corda)</div>
+        <audio controls style="width: 100%; margin-top: 10px;">
+            <source src="../audios/acordeC.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div style="width: 250px;">
+        <div><strong>Para o acorde de D</strong></div>
+        <div style="margin-left: 20px;">Dedo 1 na Casa 2 Corda 3</div>
+        <div style="margin-left: 20px;">Dedo 2 na Casa 2 Corda 1</div>
+        <div style="margin-left: 20px;">Dedo 3 na Casa 3 Corda 2</div>
+        <div style="font-size: 0.9em; color: gray;">(OBS: Não se toca a 5ª e 6ª)</div>
+        <audio controls style="width: 100%; margin-top: 10px;">
+            <source src="../audios/acordeD.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+</div>
+
+<p> Se ja te sentes capaz de fazer estes acordes, vamos passar para os ritmos e depois disso, vamos aprender a tocar a nossa primeira musica!</p>
+
+<div style="margin-top: 50px; text-align: center; width: 100%;">
+
+        <a href="acordes_basicos.html" style="
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 15px 32px; 
+            text-align: center; 
+            text-decoration: none; 
+            display: inline-block; 
+            font-size: 16px; 
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        ">
+            Ir para a Aula de Acordes
+        </a>
+    </div>
+<script>
+function toggleDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Fecha o menu se o utilizador clicar fora dele
+window.onclick = function(event) {
+  if (!event.target.matches('.nav-link')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
